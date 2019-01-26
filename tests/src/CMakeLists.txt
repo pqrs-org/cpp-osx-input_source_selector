@@ -13,6 +13,7 @@ project (test)
 
 add_executable(
   test
+  nlohmann_json_test.cpp
   test.cpp
   selector_test.cpp
   specifier_test.cpp
