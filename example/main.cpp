@@ -16,10 +16,15 @@ int main(void) {
 
   auto selector = std::make_shared<pqrs::osx::input_source_selector::selector>(dispatcher);
 
-  pqrs::osx::input_source_selector::specifier specifier;
-  specifier.set_language("^ja$");
+  auto specifiers = std::make_shared<std::vector<pqrs::osx::input_source_selector::specifier>>();
 
-  selector->async_select(specifier);
+  {
+    pqrs::osx::input_source_selector::specifier s;
+    s.set_language("^ja$");
+    specifiers->push_back(s);
+  }
+
+  selector->async_select(specifiers);
 
   std::thread thread([&selector] {
     global_wait->wait_notice();
