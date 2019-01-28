@@ -8,7 +8,15 @@ TEST_CASE("selector") {
 
   auto selector = std::make_shared<pqrs::osx::input_source_selector::selector>(dispatcher);
 
-  selector = nullptr;
+  std::thread th([&selector] {
+    selector = nullptr;
+
+    CFRunLoopStop(CFRunLoopGetMain());
+  });
+
+  CFRunLoopRun();
+
+  th.join();
 
   dispatcher->terminate();
   dispatcher = nullptr;
