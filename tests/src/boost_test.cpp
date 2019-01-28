@@ -10,6 +10,7 @@ TEST_CASE("boost_specifier") {
 
     pqrs::osx::input_source_selector::specifier s2;
 
-    REQUIRE(boost::hash_value(s1) != boost::hash_value(s2));
+    REQUIRE(pqrs::osx::input_source_selector::hash_value(s1) !=
+            pqrs::osx::input_source_selector::hash_value(s2));
   }
 }
