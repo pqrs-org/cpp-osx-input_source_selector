@@ -5,12 +5,10 @@
 
 TEST_CASE("boost_specifier") {
   {
-    pqrs::osx::input_source_selector::specifier s1;
-    s1.set_language("^en$");
+    pqrs::osx::input_source_selector::specifier s;
+    s.set_language("^en$");
 
-    pqrs::osx::input_source_selector::specifier s2;
-
-    REQUIRE(pqrs::osx::input_source_selector::hash_value(s1) !=
-            pqrs::osx::input_source_selector::hash_value(s2));
+    REQUIRE(std::hash<pqrs::osx::input_source_selector::specifier>{}(s) ==
+            pqrs::osx::input_source_selector::hash_value(s));
   }
 }

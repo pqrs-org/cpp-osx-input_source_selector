@@ -133,3 +133,15 @@ TEST_CASE("specifier") {
     REQUIRE(!specifier.test(properties));
   }
 }
+
+TEST_CASE("specifier hash") {
+  {
+    pqrs::osx::input_source_selector::specifier s1;
+    s1.set_language("^en$");
+
+    pqrs::osx::input_source_selector::specifier s2;
+
+    REQUIRE(std::hash<pqrs::osx::input_source_selector::specifier>{}(s1) !=
+            std::hash<pqrs::osx::input_source_selector::specifier>{}(s2));
+  }
+}

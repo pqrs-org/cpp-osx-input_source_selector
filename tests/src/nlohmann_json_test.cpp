@@ -7,7 +7,7 @@ TEST_CASE("nlohmann_json") {
   {
     pqrs::osx::input_source_selector::specifier specifier;
     nlohmann::json json = specifier;
-    pqrs::osx::input_source_selector::specifier specifier2 = json;
+    auto specifier2 = json.get<pqrs::osx::input_source_selector::specifier>();
 
     REQUIRE(specifier == specifier2);
   }
@@ -18,7 +18,7 @@ TEST_CASE("nlohmann_json") {
     specifier.set_input_mode_id("^com\\.apple\\.inputmethod\\.SCIM\\.ITABC$");
 
     nlohmann::json json = specifier;
-    pqrs::osx::input_source_selector::specifier specifier2 = json;
+    auto specifier2 = json.get<pqrs::osx::input_source_selector::specifier>();
 
     REQUIRE(specifier == specifier2);
   }
