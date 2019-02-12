@@ -102,6 +102,8 @@ TEST_CASE("nlohmann_json") {
   {
     auto json = nlohmann::json::object({
         {"language", "(regex"},
+        {"input_source_id", "regex"},
+        {"input_mode_id", "regex"},
     });
 
     REQUIRE_THROWS_AS(
@@ -109,7 +111,7 @@ TEST_CASE("nlohmann_json") {
         pqrs::json::unmarshal_error);
     REQUIRE_THROWS_WITH(
         json.get<pqrs::osx::input_source_selector::specifier>(),
-        "The expression contained mismatched ( and ).: `{\"language\":\"(regex\"}`");
+        "The expression contained mismatched ( and ).: `\"language\":\"(regex\"`");
   }
 
   // type error (input_source_id)
@@ -131,7 +133,9 @@ TEST_CASE("nlohmann_json") {
 
   {
     auto json = nlohmann::json::object({
+        {"language", "regex"},
         {"input_source_id", "(regex"},
+        {"input_mode_id", "regex"},
     });
 
     REQUIRE_THROWS_AS(
@@ -139,7 +143,7 @@ TEST_CASE("nlohmann_json") {
         pqrs::json::unmarshal_error);
     REQUIRE_THROWS_WITH(
         json.get<pqrs::osx::input_source_selector::specifier>(),
-        "The expression contained mismatched ( and ).: `{\"input_source_id\":\"(regex\"}`");
+        "The expression contained mismatched ( and ).: `\"input_source_id\":\"(regex\"`");
   }
 
   // type error (input_mode_id)
@@ -161,6 +165,8 @@ TEST_CASE("nlohmann_json") {
 
   {
     auto json = nlohmann::json::object({
+        {"language", "regex"},
+        {"input_source_id", "regex"},
         {"input_mode_id", "(regex"},
     });
 
@@ -169,6 +175,6 @@ TEST_CASE("nlohmann_json") {
         pqrs::json::unmarshal_error);
     REQUIRE_THROWS_WITH(
         json.get<pqrs::osx::input_source_selector::specifier>(),
-        "The expression contained mismatched ( and ).: `{\"input_mode_id\":\"(regex\"}`");
+        "The expression contained mismatched ( and ).: `\"input_mode_id\":\"(regex\"`");
   }
 }
