@@ -97,6 +97,21 @@ TEST_CASE("nlohmann_json") {
         "`language` must be string, but is `null`");
   }
 
+  // regex error (language)
+
+  {
+    auto json = nlohmann::json::object({
+        {"language", "(regex"},
+    });
+
+    REQUIRE_THROWS_AS(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        pqrs::json::unmarshal_error);
+    REQUIRE_THROWS_WITH(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        "The expression contained mismatched ( and ).: `{\"language\":\"(regex\"}`");
+  }
+
   // type error (input_source_id)
 
   {
@@ -112,6 +127,21 @@ TEST_CASE("nlohmann_json") {
         "`input_source_id` must be string, but is `null`");
   }
 
+  // regex error (input_source_id)
+
+  {
+    auto json = nlohmann::json::object({
+        {"input_source_id", "(regex"},
+    });
+
+    REQUIRE_THROWS_AS(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        pqrs::json::unmarshal_error);
+    REQUIRE_THROWS_WITH(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        "The expression contained mismatched ( and ).: `{\"input_source_id\":\"(regex\"}`");
+  }
+
   // type error (input_mode_id)
 
   {
@@ -125,5 +155,20 @@ TEST_CASE("nlohmann_json") {
     REQUIRE_THROWS_WITH(
         json.get<pqrs::osx::input_source_selector::specifier>(),
         "`input_mode_id` must be string, but is `null`");
+  }
+
+  // regex error (input_mode_id)
+
+  {
+    auto json = nlohmann::json::object({
+        {"input_mode_id", "(regex"},
+    });
+
+    REQUIRE_THROWS_AS(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        pqrs::json::unmarshal_error);
+    REQUIRE_THROWS_WITH(
+        json.get<pqrs::osx::input_source_selector::specifier>(),
+        "The expression contained mismatched ( and ).: `{\"input_mode_id\":\"(regex\"}`");
   }
 }
