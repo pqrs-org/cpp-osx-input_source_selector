@@ -38,9 +38,9 @@ set_target_properties(
   MACOSX_BUNDLE_INFO_PLIST
   ${CMAKE_CURRENT_LIST_DIR}/Resources/Info.plist
 
+  XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER
+  "org.pqrs.cpp-osx-input_source_selector.example-app"
+
   XCODE_ATTRIBUTE_ENABLE_HARDENED_RUNTIME
   YES
-
-  XCODE_ATTRIBUTE_LD_RUNPATH_SEARCH_PATHS
-  "@loader_path @loader_path/../Frameworks"
 )
