@@ -9,8 +9,8 @@ Call slots when Input Source is changed.
 
 cpp-osx-input_source_selector depends the following classes.
 
-- [pqrs::dispatcher](https://github.com/pqrs-org/cpp-dispatcher)
-- [pqrs::osx::input_source](https://github.com/pqrs-org/cpp-osx-input_source)
+-   [pqrs::dispatcher](https://github.com/pqrs-org/cpp-dispatcher)
+-   [pqrs::osx::input_source](https://github.com/pqrs-org/cpp-osx-input_source)
 
 ## Install
 
