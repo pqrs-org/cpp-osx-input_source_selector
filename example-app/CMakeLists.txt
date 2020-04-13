@@ -39,7 +39,7 @@ set_target_properties(
   ${CMAKE_CURRENT_LIST_DIR}/Resources/Info.plist
 
   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER
-  "org.pqrs.cpp-osx-input_source_selector.example-app"
+  "org.pqrs.cpp-osx-input-source-selector.example-app"
 
   XCODE_ATTRIBUTE_ENABLE_HARDENED_RUNTIME
   YES
