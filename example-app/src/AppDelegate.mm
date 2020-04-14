@@ -4,24 +4,28 @@
 
 @interface AppDelegate ()
 
-@property(weak) IBOutlet NSWindow *window;
+@property(weak) IBOutlet NSWindow* window;
 @property std::shared_ptr<pqrs::osx::input_source_selector::selector> input_source_selector;
 
 @end
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification*)aNotification {
   pqrs::dispatcher::extra::initialize_shared_dispatcher();
 
   self.input_source_selector = std::make_shared<pqrs::osx::input_source_selector::selector>(
       pqrs::dispatcher::extra::get_shared_dispatcher());
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+- (void)applicationWillTerminate:(NSNotification*)aNotification {
   self.input_source_selector = nullptr;
 
   pqrs::dispatcher::extra::terminate_shared_dispatcher();
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)theApplication {
+  return YES;
 }
 
 - (IBAction)selectInputSourceEn:(id)sender {
