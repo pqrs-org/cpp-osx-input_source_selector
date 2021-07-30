@@ -11,7 +11,6 @@ add_compile_options(-Werror)
 add_compile_options(-O2)
 add_compile_options(-fobjc-arc)
 add_compile_options(-fmodules)
-add_compile_options(-fcxx-modules)
 
 include_directories(SYSTEM ${CMAKE_CURRENT_LIST_DIR}/vendor/include)
 include_directories(SYSTEM ${CMAKE_CURRENT_LIST_DIR}/../include)
@@ -24,6 +23,12 @@ add_executable(
   src/main.m
   Resources/MainMenu.xib
   Resources/Assets.xcassets
+)
+
+target_link_libraries(
+  input-source-selector-example-app
+  "-framework Carbon"
+  "-framework Cocoa"
 )
 
 set_source_files_properties(
