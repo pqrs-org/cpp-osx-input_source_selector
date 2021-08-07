@@ -1,5 +1,5 @@
 [![Build Status](https://github.com/pqrs-org/cpp-osx-input_source_selector/workflows/CI/badge.svg)](https://github.com/pqrs-org/cpp-osx-input_source_selector/actions)
-[![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-osx-input_source_selector/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-osx-input_source_selector/blob/main/LICENSE.md)
 
 # cpp-osx-input_source_selector
 
