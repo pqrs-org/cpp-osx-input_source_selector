@@ -40,6 +40,8 @@ int main(void) {
 
   // ============================================================
 
+  thread.join();
+
   dispatcher->terminate();
   dispatcher = nullptr;
 
