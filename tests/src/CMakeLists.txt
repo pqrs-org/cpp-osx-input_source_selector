@@ -13,11 +13,7 @@ project (test)
 
 add_executable(
   test
-  boost_test.cpp
-  nlohmann_json_test.cpp
   test.cpp
-  selector_test.cpp
-  specifier_test.cpp
 )
 
 target_link_libraries(
