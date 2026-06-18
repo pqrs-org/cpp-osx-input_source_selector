@@ -1,7 +1,7 @@
 #include <boost/ut.hpp>
 #include <pqrs/osx/input_source_selector.hpp>
 
-void run_selector_test(void) {
+void run_selector_test() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 
@@ -10,6 +10,7 @@ void run_selector_test(void) {
     auto dispatcher = std::make_shared<pqrs::dispatcher::dispatcher>(time_source);
 
     auto selector = std::make_shared<pqrs::osx::input_source_selector::selector>(dispatcher);
+    selector->async_select({});
 
     std::thread th([&selector] {
       selector = nullptr;

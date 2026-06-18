@@ -6,12 +6,8 @@
 
 #include <pqrs/osx/input_source_selector/specifier.hpp>
 
-namespace pqrs {
-namespace osx {
-namespace input_source_selector {
+namespace pqrs::osx::input_source_selector {
 inline std::size_t hash_value(const specifier& value) {
   return std::hash<specifier>{}(value);
 }
-} // namespace input_source_selector
-} // namespace osx
-} // namespace pqrs
+} // namespace pqrs::osx::input_source_selector

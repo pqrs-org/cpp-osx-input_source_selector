@@ -6,7 +6,7 @@ namespace {
 auto global_wait = pqrs::make_thread_wait();
 }
 
-int main(void) {
+int main() {
   std::signal(SIGINT, [](int) {
     global_wait->notify();
   });
@@ -16,12 +16,12 @@ int main(void) {
 
   auto selector = std::make_shared<pqrs::osx::input_source_selector::selector>(dispatcher);
 
-  auto specifiers = std::make_shared<std::vector<pqrs::osx::input_source_selector::specifier>>();
+  std::vector<pqrs::osx::input_source_selector::specifier> specifiers;
 
   {
     pqrs::osx::input_source_selector::specifier s;
     s.set_language("^ja$");
-    specifiers->push_back(s);
+    specifiers.push_back(s);
   }
 
   selector->async_select(specifiers);

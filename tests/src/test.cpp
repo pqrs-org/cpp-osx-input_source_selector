@@ -3,7 +3,7 @@
 #include "selector_test.hpp"
 #include "specifier_test.hpp"
 
-int main(void) {
+int main() {
   run_boost_test();
   run_nlohmann_json_test();
   run_selector_test();

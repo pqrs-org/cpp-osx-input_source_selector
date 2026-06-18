@@ -1,7 +1,7 @@
 #include <boost/ut.hpp>
 #include <pqrs/osx/input_source_selector.hpp>
 
-void run_specifier_test(void) {
+void run_specifier_test() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 

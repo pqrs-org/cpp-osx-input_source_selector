@@ -2,7 +2,7 @@
 #include <iostream>
 #include <pqrs/osx/input_source_selector/extra/boost.hpp>
 
-void run_boost_test(void) {
+void run_boost_test() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 

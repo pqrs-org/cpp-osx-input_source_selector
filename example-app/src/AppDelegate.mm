@@ -29,24 +29,24 @@
 }
 
 - (IBAction)selectInputSourceEn:(id)sender {
-  auto specifiers = std::make_shared<std::vector<pqrs::osx::input_source_selector::specifier>>();
+  std::vector<pqrs::osx::input_source_selector::specifier> specifiers;
 
   {
     pqrs::osx::input_source_selector::specifier s;
     s.set_language("^en$");
-    specifiers->push_back(s);
+    specifiers.push_back(s);
   }
 
   self.input_source_selector->async_select(specifiers);
 }
 
 - (IBAction)selectInputSourceJa:(id)sender {
-  auto specifiers = std::make_shared<std::vector<pqrs::osx::input_source_selector::specifier>>();
+  std::vector<pqrs::osx::input_source_selector::specifier> specifiers;
 
   {
     pqrs::osx::input_source_selector::specifier s;
     s.set_language("^ja$");
-    specifiers->push_back(s);
+    specifiers.push_back(s);
   }
 
   self.input_source_selector->async_select(specifiers);

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <pqrs/osx/input_source_selector/extra/nlohmann_json.hpp>
 
-void run_nlohmann_json_test(void) {
+void run_nlohmann_json_test() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 

@@ -7,9 +7,7 @@
 #include <pqrs/json.hpp>
 #include <pqrs/osx/input_source_selector/specifier.hpp>
 
-namespace pqrs {
-namespace osx {
-namespace input_source_selector {
+namespace pqrs::osx::input_source_selector {
 inline void to_json(nlohmann::json& j, const specifier& s) {
   j = nlohmann::json::object();
 
@@ -64,6 +62,4 @@ inline void from_json(const nlohmann::json& j, specifier& s) {
     }
   }
 }
-} // namespace input_source_selector
-} // namespace osx
-} // namespace pqrs
+} // namespace pqrs::osx::input_source_selector
