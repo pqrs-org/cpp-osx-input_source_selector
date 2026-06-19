@@ -54,6 +54,10 @@ void run_specifier_test() {
 
       properties.set_first_language("en2");
       expect(!specifier.test(properties));
+
+      specifier.set_language(std::nullopt);
+      expect(specifier.get_language_string() == std::nullopt);
+      expect(specifier.test(properties));
     }
 
     // input_source_id
@@ -80,6 +84,10 @@ void run_specifier_test() {
 
       properties.set_input_source_id("com/apple/keylayout/US");
       expect(!specifier.test(properties));
+
+      specifier.set_input_source_id(std::nullopt);
+      expect(specifier.get_input_source_id_string() == std::nullopt);
+      expect(specifier.test(properties));
     }
 
     // input_mode_id
@@ -106,6 +114,10 @@ void run_specifier_test() {
 
       properties.set_input_mode_id("com.apple.inputmethod.Japanese.FullWidthRoman");
       expect(!specifier.test(properties));
+
+      specifier.set_input_mode_id(std::nullopt);
+      expect(specifier.get_input_mode_id_string() == std::nullopt);
+      expect(specifier.test(properties));
     }
 
     // combination
