@@ -1,10 +1,11 @@
 CLANG_FORMAT_FILES = \
-	'example/*.cpp' \
-	'example-app/*.h' \
-	'example-app/*.mm' \
-	'include/*.hpp' \
-	'tests/*.cpp' \
-	'tests/*.hpp'
+	'*.h' \
+	'*.hpp' \
+	'*.hpp.in' \
+	'*.iig' \
+	'*.mm' \
+	'*.cpp' \
+	':(exclude)vendor/**'
 
 format: clang-format
 
